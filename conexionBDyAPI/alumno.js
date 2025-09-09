@@ -28,10 +28,10 @@ document.getElementById('registro').addEventListener('submit', async function(ev
 
         const result = await response.json();
 
-        document.getElementById('resultado').innerText = `Respuesta del servidor: ${result.status_message}`;
+        document.getElementById('resultado').innerText = `Respuesta del servidor: ${result.message}`;
 
     } catch (error) {
         console.error('Error al enviar la solicitud:', error);
-        document.getElementById('resultado').innerText = `Error: ${error.status_message}`;
+        document.getElementById('resultado').innerText = `Error: ${error.message}`;
     }
 });

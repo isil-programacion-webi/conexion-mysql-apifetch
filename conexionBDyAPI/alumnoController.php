@@ -51,19 +51,28 @@ class AlumnoController{
 
 }
 
-
+$request = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
 $controller = new AlumnoController();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
-    $controller->obtenerAlumnosId($_GET['id']);
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $controller->obtenerAlumnos();
-} elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Eliminar parámetros de query
+$request = explode('?', $request)[0];
+$segments = explode('/', trim($request, '/'));
+
+// Ejemplo: /alumnos/5 → ['alumnos', '5']
+
+if ($method === 'GET') {
+    if (isset($segments[1])) {
+        $controller->obtenerAlumnosId($segments[1]);
+    } else {
+        $controller->obtenerAlumnos();
+    }
+} elseif ($method === 'POST') {
     $controller->registrarAlumnos($data);
-}elseif ($_SERVER["REQUEST_METHOD"] == "PUT") {
+} elseif ($method === 'PUT') {
+    $data['idalumnos'] = $segments[1] ?? null;
     $controller->actualizarAlumnos($data);
 }
-
 
 
 ?>

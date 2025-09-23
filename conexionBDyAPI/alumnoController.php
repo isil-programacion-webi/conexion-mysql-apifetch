@@ -18,19 +18,15 @@ class AlumnoController{
         echo json_encode($response);
     }
 
-
     function obtenerAlumnos(){
         $alumno = new AlumnoModel();
         $this->deliver_response(200, "Listado de alumnos", $alumno->getAlumnos());
     }
 
-
     function obtenerAlumnosId($id){
         $alumno = new AlumnoModel();
         $this->deliver_response(200, "Alumno por ID", $alumno->getAlumnosId( $id));
     }
-
-
 
     function registrarAlumnos($data){
         $alumno = new AlumnoModel();
@@ -45,9 +41,7 @@ class AlumnoController{
         $apellido = $data['apellido'] ?? null;
         $idalumnos = $data['idalumnos'] ?? null;
         $this->deliver_response(200, "registro con exito", $alumno->updateAlumno($idalumnos,$nombre, $apellido));
-    }
-
-   
+    }   
 
 }
 

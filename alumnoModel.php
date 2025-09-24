@@ -8,7 +8,7 @@ class AlumnoModel {
     public function __construct() {
         $host = 'localhost';
         $username = 'root';
-        $password = '123456789';
+        $password = '';
         $dbname  = 'java_cursos';
 
         $this->db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

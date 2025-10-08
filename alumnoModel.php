@@ -32,30 +32,6 @@ class AlumnoModel {
 
     }
 
-    public function insertAlumno($nombre, $apellido) {
-        $stmt = $this->db->prepare("INSERT INTO alumnos (nombre, apellido) VALUES (:nombre, :apellido)");
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':apellido', $apellido);
-
-        if ($stmt->execute()) {
-            return "Alumno registrado con éxito.";
-        } else {
-            return "Error al registrar alumno.";
-        }
-    }
-
-    public function updateAlumno($idalumnos,$nombre, $apellido) {
-        $stmt = $this->db->prepare("UPDATE alumnos SET nombre= :nombre, apellido= :apellido WHERE idalumnos= :idalumnos");
-        $stmt->bindParam(':idalumnos', $idalumnos);
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':apellido', $apellido);
-
-        if ($stmt->execute()) {
-            return "Alumno actualizado con éxito.";
-        } else {
-            return "Error al actualizado alumno.";
-        }
-    }
     
 
 }

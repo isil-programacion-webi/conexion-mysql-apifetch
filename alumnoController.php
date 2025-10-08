@@ -28,20 +28,7 @@ class AlumnoController{
         $this->deliver_response(200, "Alumno por ID", $alumno->getAlumnosId( $id));
     }
 
-    function registrarAlumnos($data){
-        $alumno = new AlumnoModel();
-        $nombre = $data['nombre'] ?? null;
-        $apellido = $data['apellido'] ?? null;
-        $this->deliver_response(200, "registro con exito", $alumno->insertAlumno($nombre, $apellido));
-    }
-
-    function actualizarAlumnos($data){
-        $alumno = new AlumnoModel();
-        $nombre = $data['nombre'] ?? null;
-        $apellido = $data['apellido'] ?? null;
-        $idalumnos = $data['idalumnos'] ?? null;
-        $this->deliver_response(200, "registro con exito", $alumno->updateAlumno($idalumnos,$nombre, $apellido));
-    }   
+    
 
 }
 
@@ -61,12 +48,6 @@ if ($method === 'GET') {
     } else {
         $controller->obtenerAlumnos();
     }
-} elseif ($method === 'POST') {
-    $controller->registrarAlumnos($data);
-} elseif ($method === 'PUT') {
-    $data['idalumnos'] = $segments[1] ?? null;
-    $controller->actualizarAlumnos($data);
-}
-
+} 
 
 ?>

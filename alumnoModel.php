@@ -1,5 +1,6 @@
 <?php
 include 'alumnos.php'; 
+include 'cursos.php'; 
 
 class AlumnoModel {
 
@@ -8,8 +9,8 @@ class AlumnoModel {
     public function __construct() {
         $host = 'localhost';
         $username = 'root';
-        $password = '';
-        $dbname  = 'java_cursos';
+        $password = '123456789';
+        $dbname  = 'matricula';
 
         $this->db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     }
@@ -32,7 +33,23 @@ class AlumnoModel {
 
     }
 
+    public function getAlumnosLikeApellido($apellido){
+        $stmt = $this->db->prepare('SELECT * FROM alumnos WHERE apellido like :apellido');
+        $apellido = "%$apellido%";
+        $stmt->bindParam(':apellido', $apellido, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_CLASS, 'Alumnos');
+    }
     
+    public function getCursos() {
+
+        $stmt = $this->db->prepare("SELECT * FROM cursos");
+        $stmt->execute();
+        
+       return $stmt->fetchAll(PDO::FETCH_CLASS, 'Cursos');
+
+    }
+
 
 }
 

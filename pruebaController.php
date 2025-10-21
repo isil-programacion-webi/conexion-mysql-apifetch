@@ -32,12 +32,9 @@ class AlumnoController{
 }
 
 
-$controller = new AlumnoController();
+$cursos = new AlumnoModel();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
-    $controller->obtenerAlumnosId($data);
-}
-
+print_r($cursos->getCursos());
 
 
 ?>

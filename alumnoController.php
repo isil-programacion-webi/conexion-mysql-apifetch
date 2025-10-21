@@ -28,6 +28,10 @@ class AlumnoController{
         $this->deliver_response(200, "Alumno por ID", $alumno->getAlumnosId( $id));
     }
 
+    function obtenerAlumnoApellido($apellido){
+        $alumno = new AlumnoModel();
+        $this->deliver_response(200, "Alumno por ID", $alumno->getAlumnosLikeApellido( $apellido));
+    }
     
 
 }
@@ -40,11 +44,20 @@ $controller = new AlumnoController();
 $request = explode('?', $request)[0];
 $segments = explode('/', trim($request, '/'));
 
-// Ejemplo: /alumnos/5 → ['alumnos', '5']
+
+// Ejemplo: localhost/alumnocontroller.php/id/1
+// Ejemplo: localhost/alumnocontroller.php/apellido/juan
+
+///alumnos/5 → ['alumnos', '5']
 
 if ($method === 'GET') {
-    if (isset($segments[1])) {
-        $controller->obtenerAlumnosId($segments[1]);
+    if (isset($segments[1]) && isset($segments[2])) {
+        if($segments[1] =='id'){
+             $controller->obtenerAlumnosId($segments[2]);
+        }else if($segments[1] =='apellido'){
+            $controller->obtenerAlumnoApellido($segments[2]);
+        }
+       
     } else {
         $controller->obtenerAlumnos();
     }

@@ -4,8 +4,21 @@
 document.getElementById('buscar').addEventListener('click', async function() {
 
     const id = document.getElementById('id').value;
+    const apellido = document.getElementById('apellido').value;
     // Construir la URL con parámetros
-    const url = `alumnoController.php/${encodeURIComponent(id)}`;
+
+
+
+    let url = '';
+
+    if(id){
+        url = `alumnoController.php/id/${encodeURIComponent(id)}`;
+    }else{
+         url = `alumnoController.php/apellido/${encodeURIComponent(apellido)}`;
+    }
+
+
+
 
     try {
         const response = await fetch(url, {

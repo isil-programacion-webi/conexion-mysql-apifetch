@@ -41,6 +41,27 @@ class AlumnoModel {
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Alumnos');
     }
     
+    public function insertarAlumnos($nombre, $apellido){
+        $stmt = $this->db->prepare("INSERT INTO alumnos (nombre, apellido) VALUES (:nombre, :apellido)");
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+        return $stmt->execute(); 
+    }
+
+    public function updateAlumno($idalumnos,$nombre, $apellido) {
+        $stmt = $this->db->prepare("UPDATE alumnos SET nombre= :nombre, apellido= :apellido WHERE idalumnos= :idalumnos");
+        $stmt->bindParam(':idalumnos', $idalumnos);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+
+        if ($stmt->execute()) {
+            return "Alumno actualizado con éxito.";
+        } else {
+            return "Error al actualizado alumno.";
+        }
+    }
+
+    
     public function getCursos() {
 
         $stmt = $this->db->prepare("SELECT * FROM cursos");

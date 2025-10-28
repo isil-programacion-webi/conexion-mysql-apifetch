@@ -61,6 +61,10 @@ if ($method === 'GET') {
     } else {
         $controller->obtenerAlumnos();
     }
-} 
+}elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+}elseif ($_SERVER["REQUEST_METHOD"] == "PUT") {
+
+}
 
 ?>

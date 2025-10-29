@@ -1,6 +1,8 @@
 <?php
 class Cursos{
-    public $idcursos;
-    public $cursos;
+    public $idcurso;
+    public $curso;
     public $descripcion;
+    public $docente;
+    public $horario;
 }

@@ -1,5 +1,25 @@
-# Diagrama de estados
+# Proyecto PHP - Gestión de Estudiantes y Cursos
 
-[![](https://img.plantuml.biz/plantuml/svg/ZP91QWCn34Nt1j_1wq8ka4L96R9C20rq4xeG7YS8F5QGFINNwHbwX5oibYTa9iHJkhEa_xvaowkOW5FVUQqEBvzciNWrMtft9uo9eIMjj9h6HV3M9nSIMecNOsJn-XECks2Y21Ni8V747S5xR44QJlq5t3llh4KA45fgUeuKHLP95_cQcVW3n6smNffR5SFNzJldXP-ZX-DOpUBHOCIrgWcB0OKZSYUs6qYCjlVbLhLyvJaR2DPvu3-0UtH_Jn3m9cTfLfFCepiuaJcxq68UnFs3RgWxUvSczB1sUkWzKGcT_vUKdzOpi-9o9UOy0PiubBDQgrMUC__NNm00)](https://editor.plantuml.com/uml/ZP91QWCn34Nt1j_1wq8ka4L96R9C20rq4xeG7YS8F5QGFINNwHbwX5oibYTa9iHJkhEa_xvaowkOW5FVUQqEBvzciNWrMtft9uo9eIMjj9h6HV3M9nSIMecNOsJn-XECks2Y21Ni8V747S5xR44QJlq5t3llh4KA45fgUeuKHLP95_cQcVW3n6smNffR5SFNzJldXP-ZX-DOpUBHOCIrgWcB0OKZSYUs6qYCjlVbLhLyvJaR2DPvu3-0UtH_Jn3m9cTfLfFCepiuaJcxq68UnFs3RgWxUvSczB1sUkWzKGcT_vUKdzOpi-9o9UOy0PiubBDQgrMUC__NNm00)
+## Descripción
+Este proyecto es una aplicación en **PHP** que permite gestionar estudiantes y cursos.  
+Las funcionalidades principales incluyen:  
+- Crear  
+- Listar  
+- Actualizar  
+- Eliminar  
 
-[![](https://img.plantuml.biz/plantuml/svg/TP9DQiD038Nt1jz1P9LS8LaqeIsbYtJHGFVgM4u5y-EEne52BjH5LZs2BrQD7H8xfU2LzFJqpPFNaZ2crjcoE6viwtmubaLVAulbisV36458kFlnAotjo98n7BoMGsDo6MPRJB4xcTRYB6lkWvVMfgoeAIO4D5XrtuuDtbgODagGyr3DqVNR-lwmKB5sB8aSGaLmNQIKopUqNEb04odIPyl2AGXymKU86BctvHhcsTcooRsA4fc4LP2x1QGFyZ3VTQT5MG0iNqBYMX4ZeDKlHx7AZMiiAjg6wYoQKAhgFqeTUgN3cNGoH5wzz1bFv4c18PAqJf7KmLqSSZIF_i2Z_XXlVBMyX-KgdAOwiSnZbMElp1678sukDngizdrlF0UwMuPNhaRO9hWcXdVqYMw17aWqglqVaQJGbCLQ0z0VxnS0)](https://editor.plantuml.com/uml/TP9DQiD038Nt1jz1P9LS8LaqeIsbYtJHGFVgM4u5y-EEne52BjH5LZs2BrQD7H8xfU2LzFJqpPFNaZ2crjcoE6viwtmubaLVAulbisV36458kFlnAotjo98n7BoMGsDo6MPRJB4xcTRYB6lkWvVMfgoeAIO4D5XrtuuDtbgODagGyr3DqVNR-lwmKB5sB8aSGaLmNQIKopUqNEb04odIPyl2AGXymKU86BctvHhcsTcooRsA4fc4LP2x1QGFyZ3VTQT5MG0iNqBYMX4ZeDKlHx7AZMiiAjg6wYoQKAhgFqeTUgN3cNGoH5wzz1bFv4c18PAqJf7KmLqSSZIF_i2Z_XXlVBMyX-KgdAOwiSnZbMElp1678sukDngizdrlF0UwMuPNhaRO9hWcXdVqYMw17aWqglqVaQJGbCLQ0z0VxnS0)
+Tanto para **estudiantes** como para **cursos**, garantizando un flujo completo de administración académica.
+
+---
+
+## Requisitos previos
+- PHP >= 8.0  
+- Servidor web XAMPP
+- Base de datos MySQL  
+
+---
+
+## Instalación
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/isil-programacion-webi/conexion-mysql-apifetch.git

@@ -1,18 +1,14 @@
 <?php
+include __DIR__ . '/../shared/config/connection.php';
 include 'alumnos.php'; 
-include 'cursos.php'; 
 
 class AlumnoModel {
 
     private $db;
 
+   
     public function __construct() {
-        $host = 'localhost';
-        $username = 'root';
-        $password = '123456789';
-        $dbname  = 'matricula';
-
-        $this->db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+       $this->db =  new Connection();
     }
 
     public function getAlumnos() {
@@ -61,15 +57,6 @@ class AlumnoModel {
         }
     }
 
-    
-    public function getCursos() {
-
-        $stmt = $this->db->prepare("SELECT * FROM cursos");
-        $stmt->execute();
-        
-       return $stmt->fetchAll(PDO::FETCH_CLASS, 'Cursos');
-
-    }
 
 
 }

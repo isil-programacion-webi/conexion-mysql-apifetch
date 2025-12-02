@@ -1,17 +1,12 @@
 <?php
+include __DIR__ . '/../shared/config/connection.php';
 include 'cursos.php'; 
 
 class CursosModelo {
-
     private $db;
 
     public function __construct() {
-        $host = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname  = 'java_cursos';
-
-        $this->db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+       $this->db =  new Connection();
     }
 
     public function getCursos() {

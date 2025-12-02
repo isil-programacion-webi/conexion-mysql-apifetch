@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/../shared/config/connection.php';
 include 'users.php'; 
 
 class UserModelo {
@@ -6,12 +7,7 @@ class UserModelo {
     private $db;
 
     public function __construct() {
-        $host = 'localhost';
-        $username = 'root';
-        $password = '123456789';
-        $dbname  = 'java_cursos';
-
-        $this->db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+       $this->db =  new Connection();
     }
 
    public function validarUser($userName, $password){

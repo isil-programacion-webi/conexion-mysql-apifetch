@@ -14,7 +14,7 @@ document.getElementById('registro').addEventListener('submit', async function(ev
 
     try {
 
-        const response = await fetch('alumnoController.php', {
+        const response = await fetch('./../shared/router/router.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' 
@@ -41,20 +41,14 @@ document.getElementById('buscar').addEventListener('click', async function() {
 
     const id = document.getElementById('id').value;
     const apellido = document.getElementById('apellido').value;
-    // Construir la URL con parámetros
-
-
 
     let url = '';
 
     if(id){
-        url = `alumnoController.php/id/${encodeURIComponent(id)}`;
+        url = `./../shared/router/router.php/name/${encodeURIComponent(id)}`;
     }else{
-         url = `alumnoController.php/apellido/${encodeURIComponent(apellido)}`;
+         url = `./../shared/router/router.php/name/${encodeURIComponent(apellido)}`;
     }
-
-
-
 
     try {
         const response = await fetch(url, {
@@ -85,7 +79,6 @@ document.getElementById('buscar').addEventListener('click', async function() {
         });
 
 
-        document.getElementById('resultado').innerText = `Respuesta del servidor: ${result.data[0].nombre}`;
     } catch (error) {
         console.error('Error al enviar la solicitud:', error);
         document.getElementById('resultado').innerText = `Error: ${error.message}`;
@@ -95,7 +88,7 @@ document.getElementById('buscar').addEventListener('click', async function() {
 //MOSTRAR TODO
 document.addEventListener('DOMContentLoaded', async function() {
   try {
-    const response = await fetch('alumnoController.php');
+    const response = await fetch('./../shared/router/router.php');
     if (!response.ok) throw new Error(`Error: ${response.status}`);
 
     const result = await response.json();

@@ -1,22 +1,15 @@
 <?php
+ini_set('display_errors', 1); // Oculta errores en la salida
+ini_set('log_errors', 1);     // Registra errores en el log
+error_reporting(E_ALL); 
+
+include_once __DIR__ . '/../shared/config/controller.php';
 include 'cursosModelo.php'; 
 
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents('php://input'), true);
 
-class CursosController{
-
-
-    function deliver_response($status, $status_message, $data)
-    {
-        http_response_code($status); 
-        $response = [
-            'status' => $status,
-            'message' => $status_message,
-            'data' => $data
-        ];
-        echo json_encode($response);
-    }
+class CursosController extends Controller{
 
     function obtenerCursos(){
         $cursos = new CursosModelo();
@@ -50,18 +43,5 @@ class CursosController{
     }
 }
 
-
-$request = $_SERVER['REQUEST_URI'];
-$method = $_SERVER['REQUEST_METHOD'];
-$controller = new CursosController();
-
-$request = explode('?', $request)[0];
-$segments = explode('/', trim($request, '/'));
-
-if ($method === 'GET') {
-    
-    $controller->obtenerCursos();
-    
-}
     
 

@@ -23,3 +23,8 @@ Tanto para **estudiantes** como para **cursos**, garantizando un flujo completo 
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/isil-programacion-webi/conexion-mysql-apifetch.git
+
+## Deploy
+
+https://www.infinityfree.com/
+https://programacionweb-wilder.lovestoblog.com/alumno/alumno.html
